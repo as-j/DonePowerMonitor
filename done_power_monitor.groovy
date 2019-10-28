@@ -87,7 +87,7 @@ def updated() {
 def powerChanged(evt) {
     if (logEnable) log.debug "powerChanged(): $evt.displayName($evt.name) $evt.value"
 
-    def value = evt.value.toInteger()
+    def value = Double.parseDouble(evt.value)
 
     if (value > onThreshold) {
         state.deviceOn = true
